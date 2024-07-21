@@ -9,13 +9,14 @@ Open brackets must be closed in the correct order.
 Every close bracket has a corresponding open bracket of the same type.
 """
 def isValid():
+    s = "()[]{}"
     stack = []
     for char in s:
         if char in "({[": # if char is opening bracket
             stack.append(char)
         else: #if char is closing bracket
             if not stack or \
-                (char == ")" and stack[-1] != '(') or\
+                (char == ")" and stack.peek() != '(') or\
                 (char == "}" and stack[-1] != '{') or \
                 (char == "]" and stack[-1] != "["):
                 return False
