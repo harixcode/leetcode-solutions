@@ -20,7 +20,7 @@ def rotateString(s, goal):
             char[i] = char[i+1]
         else:
             char[i] = temp
-        print (char)
+        #print (char)
         if char == goal:
             break
     return char
